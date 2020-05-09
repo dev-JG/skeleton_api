@@ -38,26 +38,26 @@
   </sql>
 
   <select id="selectBySelective" parameterType="com.dev.jg.model.User" resultMap="BaseResultMap">
-    select
+    SELECT
     <include refid="Base_Column_List" />
-    from user
+    FROM user
     <include refid="Where_Clause" />
   </select>
 
   <select id="selectByPrimaryKey" parameterType="com.dev.jg.model.User" resultMap="BaseResultMap">
-    select
+    SELECT
     <include refid="Base_Column_List" />
-    from user
-    where user_no = #{userNo,jdbcType=INTEGER}
+    FROM user
+    WHERE user_no = #{userNo,jdbcType=INTEGER}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from user
-    where user_no = #{userNo,jdbcType=INTEGER}
+    DELETE FROM user
+    WHERE user_no = #{userNo,jdbcType=INTEGER}
   </delete>
 
   <insert id="insertSelective" keyColumn="user_no" keyProperty="userNo" parameterType="com.dev.jg.model.User" useGeneratedKeys="true">
-    insert into user
+    INSERT INTO user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">
         user_id,
@@ -107,7 +107,7 @@
   </insert>
 
   <update id="updateByPrimaryKeySelective" parameterType="com.dev.jg.model.User">
-    update user
+    UPDATE user
     <set>
       <if test="userId != null">
         user_id = #{userId,jdbcType=VARCHAR},
