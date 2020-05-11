@@ -1,13 +1,13 @@
 package com.dev.jg.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class User {
+@Setter
+@Getter
+public class UserSearchParam {
 
     private int userNo;
 
@@ -24,4 +24,8 @@ public class User {
     private LocalDateTime createDate;
 
     private LocalDateTime updateDate;
+
+    private int page = 1;
+
+    private int pageSize = 5;
 }
