@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: desk
+    active: local
 
   application:
     name: skeleton_api

@@ -40,6 +40,16 @@ dependencies {
     /** log4j2관련 의존성 */
     implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
 
+    /** 스웨거 의존성 추가 */
+    implementation ('io.springfox:springfox-swagger2:2.9.2'){
+        /** 의존성문제때문에 해당 버전 제거(getExample : Illegal DefaultValue for parameter type integer) */
+        exclude module: 'swagger-annotations'
+        exclude module: 'swagger-models'
+    }
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+    implementation "io.swagger:swagger-annotations:1.5.21"
+    implementation "io.swagger:swagger-models:1.5.21"
+
     runtimeOnly 'mysql:mysql-connector-java'
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
